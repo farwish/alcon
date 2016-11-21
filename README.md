@@ -1,12 +1,13 @@
 #Alcon
 
-> Pure communal library for your program, if you are developing in phalcon framework.  
+> Synopsis:
+`Alcon is a pure communal library for your program, if you are developing in phalcon framework.`  
 
 > Usage:  
-> `composer require farwish/alcon:dev-master`  
+`composer require farwish/alcon:dev-master`  
 
 > Suggest:  
-> `You are encouraged to read it by yourself, its few and simple.`  
+`You are encouraged to read it by yourself, its few and simple.`  
 
 > Classes:  
-> ControllerTrait.php  
+`Trait/ControllerTrait.php`  
