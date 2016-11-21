@@ -3,11 +3,13 @@
 namespace Alcon;
 
 /**
- * 控制器trait.
+ * Trait for controller.
+ *
+ * 供控制器使用Trait.
  *
  * @farwish
  */
-Trait ControlTrait
+Trait ControllerTrait
 {
     protected static $p;
 
@@ -16,7 +18,13 @@ Trait ControlTrait
     protected static $limit = 10;
     
     /**
-     * Initialize.
+     * Can be used in ControllerBase::initialize().
+     *
+     * 可在 ControllerBase::initialize() 中调用作初始化.
+     * 
+     * <code>
+     *  self::init();
+     * </code>
      *
      * @farwish
      */
@@ -33,7 +41,11 @@ Trait ControlTrait
     }
 
     /** 
-     * Respond json.
+     * Response json.
+     *
+     * <code>
+     *  $this->respond();
+     * </code>
      *
      * @farwish
      */
