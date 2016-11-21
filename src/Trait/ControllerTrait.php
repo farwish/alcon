@@ -1,6 +1,6 @@
 <?php
 
-namespace Alcon;
+namespace Alcon\Trait;
 
 /**
  * Trait for controller.
