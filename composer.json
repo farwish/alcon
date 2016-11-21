@@ -1,0 +1,16 @@
+{
+    "name": "farwish/alcon",
+    "description": "common package.",
+    "type": "library",
+    "license": "private",
+    "authors": [
+        {
+            "name": "farwish",
+            "email": "farwish@foxmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.9",
+    }
+}
