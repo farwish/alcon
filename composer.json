@@ -2,14 +2,14 @@
     "name": "farwish/alcon",
     "description": "common package.",
     "type": "library",
-    "license": "private",
+    "license": "proprietary",
     "authors": [
         {
             "name": "farwish",
             "email": "farwish@foxmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "beta",
     "require": {
         "php": ">=5.5.9",
         "ext-phalcon": "~2.0.13"
@@ -17,5 +17,8 @@
     "repositories": {
         "type": "vcs",
         "url": "git@git.coding.net:farwish/alcon.git"
+    },
+    "autoload": {
+        "psr-4": {"Alcon\\": "src/"}
     }
 }
