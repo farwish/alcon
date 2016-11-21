@@ -12,5 +12,10 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.9",
+        "ext-phalcon": "~2.0.13"
+    },
+    "repositories": {
+        "type": "vcs",
+        "url": "git@git.coding.net:farwish/alcon.git"
     }
 }
