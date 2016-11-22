@@ -1,8 +1,9 @@
 {
     "name": "farwish/alcon",
-    "description": "common package.",
+    "description": "communal library for developing app in phalcon framework",
+    "keywords": ["alcon", "phalcon", "support"],
     "type": "library",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "farwish",

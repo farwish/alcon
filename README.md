@@ -11,3 +11,9 @@
 
 > Classes:  
 `Trait/ControllerTrait.php`  
+
+> A&Q  
+`How to install phalcon?`  
+`References:`  
+`1. https://github.com/farwish/delicateShell/tree/master/lnmp`  
+`2. https://docs.phalconphp.com/en/latest/reference/install.html`  
