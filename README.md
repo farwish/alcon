@@ -18,7 +18,6 @@ Traits
 
 Services(Yar)  
     |_ ServiceBase.php  
-    |_ ServiceBbs.php  
 ```
 
 > A&Q  
