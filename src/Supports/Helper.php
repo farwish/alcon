@@ -258,4 +258,19 @@ class Helper
         return $yuan + (mt_rand(0, 50) / 100);
     }
 
+    /**
+     * Mobile check.
+     *
+     * @param mixed
+     *
+     * @return boolean true验证通过
+     */
+    public static function ismobile($string)
+    {
+        if ( preg_match('/^1\d{10}$/', $string, $matches) ) {
+            return true;
+        }
+        return false;
+    }
+
 }
