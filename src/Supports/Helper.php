@@ -105,6 +105,23 @@ class Helper
         return $sql;
     }
 
+    /** 
+     * 构造 AND 条件语句.
+     *
+     * @param array $array.
+     *
+     * @farwish
+     */
+    public static function build_and_condition(array $array)
+    {   
+        $str = ''; 
+        foreach ($array as $key => $val) {
+            $kv = "{$key}='{$val}'";
+            $str .= $str ? ' AND ' . $kv : $kv;
+        }
+        return $str;
+    } 
+
     /**
      * 使用的server_name.
      *
