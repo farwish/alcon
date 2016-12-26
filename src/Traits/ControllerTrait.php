@@ -3,13 +3,13 @@
 namespace Alcon\Traits;
 
 /**
- * Trait for controller.
+ * Trait for Controller.
  *
  * 供控制器使用Trait.
  *
  * @farwish
  */
-Trait ControllerTrait
+trait ControllerTrait
 {
     protected static $p;
 
