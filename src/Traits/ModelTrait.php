@@ -32,6 +32,8 @@ trait ModelTrait
      *
      * @param array $data
      *
+     * @return int | bool
+     *
      * @farwish
      */
     public static function insertOne(array $data)
