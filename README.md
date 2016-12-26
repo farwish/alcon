@@ -22,7 +22,8 @@ Supports
     |_ STBase.php  
 
 Traits  
-    |_ ControllerTrait.php  
+    |_ ControllerTrait.php   
+    |_ ModelTrait.php  
 
 ```
 
