@@ -1,6 +1,6 @@
 <?php
 
-namespace ModelTrait\Traits;
+namespace Alcon\Traits;
 
 /**
  * Trait for Model.
