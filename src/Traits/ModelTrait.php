@@ -22,9 +22,9 @@ trait ModelTrait
      */
     public static function findArray($parameters = null)
     {
-        $res = static::find($parameters);    
+        $obj = static::find($parameters);    
 
-        return $res ? $res->toArray() : [];
+        return $obj ? $obj->toArray() : [];
     }
 
     /**
@@ -61,10 +61,16 @@ trait ModelTrait
      */
     public static function updateOne($conditions, array $data)
     {
-        $res = static::findFirst($conditions);
+        $db = \Phalcon\Di::getDefault()->getShared('db');
+    
+        $bool = $db->update(
+            (new self())->getSource(),
+            array_keys($data),
+            array_values($data),
+            $conditions
+        );
 
-        // Updates a model instance. Using save() anyways.
-        return $res->update($data);
+        return $bool;
     }
 
     /**
@@ -78,9 +84,9 @@ trait ModelTrait
      */
     public static function deleteOne($conditions)
     {
-        $res = static::findFirst($conditions);
+        $obj = static::findFirst($conditions);
 
         // Deletes a model instance.
-        return $res->delete();
+        return $obj ? $obj->delete() : false;
     }
 }
