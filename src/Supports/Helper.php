@@ -295,7 +295,7 @@ class Helper
      *
      * @easychen
      */
-    function is_mobile_request()
+    public static function is_mobile_request()
     {
         $_SERVER['ALL_HTTP'] = isset($_SERVER['ALL_HTTP']) ? $_SERVER['ALL_HTTP'] : '';
      
