@@ -281,6 +281,8 @@ class Helper
      * @param mixed
      *
      * @return boolean true验证通过
+     *
+     * @farwish
      */
     public static function ismobile($string)
     {
@@ -288,6 +290,44 @@ class Helper
             return true;
         }
         return false;
+    }
+
+    /**
+     * Curl post.
+     *
+     * @param 
+     * @param 
+     * @param 
+     * @param 
+     *
+     * @return string json
+     *
+     * @farwish
+     */
+    public static function sendPost($url, array $data, $client_ip = '')
+    {
+        $ch = curl_init();
+
+        $params = http_build_query($data);
+
+        $opt = [ 
+            CURLOPT_URL => $url,
+            CURLOPT_POST => 1,
+            CURLOPT_POSTFIELDS => $params,
+            CURLOPT_RETURNTRANSFER => 1,
+        ];
+
+        if ($client_ip) {
+            $opt[CURLOPT_HTTPHEADER] = [ 
+                "CLIENT-IP: {$client_ip}", "X-FORWARDED-FOR: {$client_ip}"
+            ];
+        }
+
+        curl_setopt_array($ch, $opt);
+
+        $json = curl_exec($ch);
+
+        return $json; 
     }
 
     /**
