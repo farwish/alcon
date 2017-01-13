@@ -24,6 +24,7 @@ Supports
 Traits  
     |_ ControllerTrait.php   
     |_ ModelTrait.php  
+    |_ ModelAdvanceTrait.php  
 
 ```
 
