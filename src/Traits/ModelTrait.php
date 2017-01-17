@@ -21,7 +21,7 @@ trait ModelTrait
      *
      * @farwish
      */
-    public static function getDb($key = 'db')
+    private static function getDb($key = 'db')
     {
         $db = \Phalcon\Di::getDefault()->getShared($key);
         
