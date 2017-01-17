@@ -11,6 +11,23 @@ namespace Alcon\Traits;
  */
 trait ModelTrait
 {
+
+    /**
+     * Get DB Instance.
+     * 
+     * @param string $key db
+     *
+     * @return object
+     *
+     * @farwish
+     */
+    public static function getDb($key = 'db')
+    {
+        $db = \Phalcon\Di::getDefault()->getShared($key);
+        
+        return $db;
+    }
+
     /**
      * 查询结果数组.
      *
@@ -38,7 +55,7 @@ trait ModelTrait
      */
     public static function insertOne(array $data)
     {
-        $db = \Phalcon\Di::getDefault()->getShared('db');
+        $db = static::getDb();
     
         $db->insert(
             (new self())->getSource(),
@@ -61,7 +78,7 @@ trait ModelTrait
      */
     public static function updateOne($conditions, array $data)
     {
-        $db = \Phalcon\Di::getDefault()->getShared('db');
+        $db = static::getDb();
     
         $bool = $db->update(
             (new self())->getSource(),

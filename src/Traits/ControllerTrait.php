@@ -11,6 +11,7 @@ namespace Alcon\Traits;
  */
 trait ControllerTrait
 {
+
     protected static $p;
 
     protected static $offset;

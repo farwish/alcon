@@ -1,14 +1,15 @@
 <?php
 
-namespace YkCommon\Traits;
+namespace Alcon\Traits;
 
 /**
- * used in model for advanced setting.
+ * Trait for Model advanced setting.
  *
  * @farwish
  */
 trait ModelAdvanceTrait
 {
+
     public function initialize()
     {   
         $this->setReadConnectionService('dbslave');
