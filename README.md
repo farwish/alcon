@@ -13,6 +13,9 @@
 > Classes:  
 
 ```
+Provider  
+    |_ EventBase.php  
+
 Scripts   
     |_ model_header.php   
     |_ produce_all_models.php  
