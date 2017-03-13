@@ -1,9 +1,12 @@
 <?php
+
+namespace Alcon\Provider;
+
 /**
  * Event Base for Observer.
  *
  * <code>
- *  class MyObserver implements SplObserver {
+ *  class MyObserver implements \SplObserver {
  *      public function update(\SplSubject $sub) {
  *          // your logic.
  *      }
@@ -18,7 +21,7 @@
  *
  * @farwish
  */
-class EventBase implements SplSubject
+class EventBase implements \SplSubject
 {
     /**
      * Observer collection.
@@ -29,14 +32,14 @@ class EventBase implements SplSubject
 
     public function __construct()
     {
-        $this->os = new SplObjectStorage();
+        $this->os = new \SplObjectStorage();
     } 
 
     /**
      * attach.
      * 
      */
-    public function attach(SplObserver $ob)
+    public function attach(\SplObserver $ob)
     {
         $this->os->attach($ob);
     }
@@ -45,7 +48,7 @@ class EventBase implements SplSubject
      * detach.
      *
      */
-    public function detach(SplObserver $ob)
+    public function detach(\SplObserver $ob)
     {
         if ($this->os->contains($ob)) {
             $this->os->detach($ob);
