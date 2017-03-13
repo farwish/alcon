@@ -5,6 +5,11 @@ namespace Alcon\Supports;
 /**
  * 通用状态码.
  *
+ * <code>
+ *  $st = Codes::ACTION_SUC;
+ *  $ms = Codes::get($st);
+ * </code>
+ *
  * @farwish
  */
 class Codes extends STBase

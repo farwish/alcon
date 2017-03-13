@@ -9,7 +9,7 @@ namespace Alcon\Supports;
  */
 abstract class STBase
 {
-	protected static $val = [];
+    protected static $val = [];
 
     /** 
      * 获取.

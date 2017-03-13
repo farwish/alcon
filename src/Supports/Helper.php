@@ -9,29 +9,29 @@ namespace Alcon\Supports;
  */
 class Helper
 {
-	/**
-	 * 先后调用 array_column 与 array_combine .
-	 *
-	 * @farwish
-	 */
-	public static function array_column_combine($array, $column)
-	{
-		$res = array_column($array, $column); 
+    /**
+     * 先后调用 array_column 与 array_combine .
+     *
+     * @farwish
+     */
+    public static function array_column_combine($array, $column)
+    {
+        $res = array_column($array, $column); 
 
-		return array_combine($res, $array);
-	}
+        return array_combine($res, $array);
+    }
 
-	/**
-	 * date 封装默认格式.
-	 *
-	 * @farwish
-	 */
-	public static function format_date($time = '', $format = 'Y-m-d H:i:s')
-	{
-		$time = $time ?: time();
+    /**
+     * date 封装默认格式.
+     *
+     * @farwish
+     */
+    public static function format_date($time = '', $format = 'Y-m-d H:i:s')
+    {
+        $time = $time ?: time();
 
-		return date($format, $time);
-	}
+        return date($format, $time);
+    }
 
     /**
      * 简化IN条件拼接.
@@ -49,36 +49,36 @@ class Helper
         return "$column $kw(" . $join . ")";
     }
 
-	/**
-	 * 唯一值生成规则.
-	 *
-	 * @farwish
-	 */
-	public static function custom_mt_uniqid($prefix = 'YK')
-	{
-		$value = mt_rand();
+    /**
+     * 唯一值生成规则.
+     *
+     * @farwish
+     */
+    public static function custom_mt_uniqid($prefix = 'YK')
+    {
+        $value = mt_rand();
 
-		$str = md5 ( uniqid($prefix, TRUE) . microtime() . $value . str_shuffle($value) );
+        $str = md5 ( uniqid($prefix, TRUE) . microtime() . $value . str_shuffle($value) );
 
-		$new_str = '';
+        $new_str = '';
 
-		for ($i = 0; $i < 10; $i++) {
-			$rand[] = mt_rand(10, 31);
-		}
-		
-		$rand = array_unique($rand);
+        for ($i = 0; $i < 10; $i++) {
+            $rand[] = mt_rand(10, 31);
+        }
+        
+        $rand = array_unique($rand);
 
-		for ($i = 0; $i < 32; $i++) {
+        for ($i = 0; $i < 32; $i++) {
 
-			if (in_array($i, $rand)) {
-				$new_str .= strtoupper($str[$i]);
-			} else {
-				$new_str .= $str[$i];
-			}
-		}
+            if (in_array($i, $rand)) {
+                $new_str .= strtoupper($str[$i]);
+            } else {
+                $new_str .= $str[$i];
+            }
+        }
 
-		return date('mY') . $new_str;
-	}
+        return date('mY') . $new_str;
+    }
 
     /**
      * 批量insert语句.
