@@ -1,0 +1,68 @@
+# Alcon
+
+【简介】  
+Alcon 是一个PHP项目开发库 (尤其适合Phalcon框架)。  
+
+【用途】  
+一个应用开发中可以使用的公用结构，目的是拆分出来便于随时组装。  
+
+【演示】  
+<安装>  
+`composer require farwish/alcon:dev-master`  
+
+<示例>  
+提供标识码：  
+    `$status = \Alcon\Supports\Codes::ACTION_SUC;`  
+    `$msg = \Alcon\Supports\Codes::get($status);`  
+
+提供函数：  
+    `\Alcon\Supports\Helper::format_date('1234567')`  
+
+提供Trait：  
+    `use \Alcon\Traits\ControllerTrait;`  
+    `use \Alcon\Traits\ModelTrait;`  
+
+提供服务层:  
+    `只要继承自 \Alcon\Services\ServiceBase;`   
+
+提供设计模式：  
+    `$ev = new \Alcon\Design\EventBase();`  
+    `$ob = new MyObserver;`  
+    `$ev->attach($ob);`  
+    `$ev->notify();`  
+
+提供任务脚本：  
+    `php vendor/farwish/alcon/src/Scripts/produce_all_models.php`   
+
+【目录结构】  
+```
+Design   
+    |_ DecoratorBase.php  
+    |_ EventBase.php  
+
+Scripts   
+    |_ model_header.php   
+    |_ produce_all_models.php  
+
+Services(Yar)  
+    |_ ServiceBase.php  
+
+Supports  
+    |_ Codes.php  
+    |_ Helper.php  
+    |_ STBase.php  
+
+Traits  
+    |_ ControllerTrait.php   
+    |_ ModelTrait.php  
+    |_ ModelAdvanceTrait.php  
+```
+
+【维护】   
+`Join Qq Gggroup: 377154148`  
+`If you do use this package, please let me know.`  
+
+【A&Q】
+`How to install phalcon?`  
+`1. https://docs.phalconphp.com/en/latest/reference/install.html`  
+`2. https://github.com/farwish/delicateShell/tree/master/lnmp`  

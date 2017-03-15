@@ -2,7 +2,8 @@
 
 > Synopsis:  
 `Alcon is a pure communal library for your program, if you are developing in phalcon framework.`    
-`一个应用开发中可以使用的公用结构, 目的是拆分支持随时组装.`  
+
+[中文文档](https://github.com/farwish/alcon/blob/master/README.cn alcon中文文档)  
 
 > Usage:  
 `composer require farwish/alcon:dev-master`  
