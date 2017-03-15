@@ -17,6 +17,7 @@
 Design  
     |_ DecoratorBase.php  
     |_ EventBase.php  
+    |_ SingletonBase.php  
 
 Scripts   
     |_ model_header.php   
@@ -39,7 +40,7 @@ Traits
 
 > Maintain or Join  
 `Join Qq Group: 377154148`  
-`If you do use this package, please let me know.`  
+`If you do use this package, please let me know; welcome to give pull request.`  
 
 > A&Q  
 `How to install phalcon?`  

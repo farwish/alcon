@@ -9,6 +9,9 @@ namespace Alcon\Design;
  * Example:
  *  https://github.com/farwish/php-lab/blob/master/lab/Decorator.php
  *
+ * This is just an interface, 
+ * so extends it to distinguish the decorator.
+ *
  * @farwish
  */
 interface DecoratorBase
