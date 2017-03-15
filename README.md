@@ -36,10 +36,11 @@ Traits
 
 ```
 
+> Maintain or Join  
+`Join Qq Group: 377154148`  
+`If you do use this package, please let me know.`  
+
 > A&Q  
 `How to install phalcon?`  
 `1. https://docs.phalconphp.com/en/latest/reference/install.html`  
 `2. https://github.com/farwish/delicateShell/tree/master/lnmp`  
-
-> Join this OpenSource  
-`Qq Group: 377154148`  
