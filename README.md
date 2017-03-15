@@ -1,9 +1,9 @@
 # Alcon
 
+[中文文档](https://github.com/farwish/alcon/blob/master/README.cn "alcon中文文档")  
+
 > Synopsis:  
 `Alcon is a pure communal library for your program, if you are developing in phalcon framework.`    
-
-[中文文档](https://github.com/farwish/alcon/blob/master/README.cn alcon中文文档)  
 
 > Usage:  
 `composer require farwish/alcon:dev-master`  
