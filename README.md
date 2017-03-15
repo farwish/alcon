@@ -13,7 +13,8 @@
 > Classes:  
 
 ```
-Provider  
+Design  
+    |_ DecoratorBase.php  
     |_ EventBase.php  
 
 Scripts   
@@ -37,6 +38,8 @@ Traits
 
 > A&Q  
 `How to install phalcon?`  
-`References:`  
-`1. https://github.com/farwish/delicateShell/tree/master/lnmp`  
-`2. https://docs.phalconphp.com/en/latest/reference/install.html`  
+`1. https://docs.phalconphp.com/en/latest/reference/install.html`  
+`2. https://github.com/farwish/delicateShell/tree/master/lnmp`  
+
+> Join this OpenSource  
+`Qq Group: 377154148`  

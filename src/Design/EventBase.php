@@ -1,6 +1,6 @@
 <?php
 
-namespace Alcon\Provider;
+namespace Alcon\Design;
 
 /**
  * Event Base for Observer.
@@ -13,9 +13,9 @@ namespace Alcon\Provider;
  *  }
  *
  *  $ev = new EventBase;
- *  $ob = new MyObserver;
- *  $ev->attach($ob);
- *  $ev->detach($ob);
+ *  $ob = new MyObserver; $ob2 = new MyObserver2;
+ *  $ev->attach($ob); $ev->attach($ob2);
+ *  $ev->detach($ob2);
  *  $ev->notify();
  * </code>
  *
@@ -37,7 +37,10 @@ class EventBase implements \SplSubject
 
     /**
      * attach.
+     *
+     * @param \SplObserver $ob
      * 
+     * @return void
      */
     public function attach(\SplObserver $ob)
     {
@@ -47,6 +50,9 @@ class EventBase implements \SplSubject
     /**
      * detach.
      *
+     * @param \SplObserver $ob
+     * 
+     * @return void
      */
     public function detach(\SplObserver $ob)
     {
@@ -58,6 +64,7 @@ class EventBase implements \SplSubject
     /**
      * notify.
      *
+     * @return void
      */
     public function notify()
     {
