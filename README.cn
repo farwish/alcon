@@ -37,6 +37,7 @@ Alcon 是一个PHP项目开发库 (尤其适合Phalcon框架)。
 【目录结构】  
 ```
 Design   
+    |_ Container.php  
     |_ Decorator.php  
     |_ Event.php  
     |_ Singleton.php  
