@@ -23,6 +23,11 @@ class Container implements \Countable
 {
     const ITEM_EXISTS = ' same object has registed! ';
 
+    /**
+     * Objects collection.
+     *
+     * @var array
+     */
     private $_container = [];
 
     public function __construct()
