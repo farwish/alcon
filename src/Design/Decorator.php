@@ -14,6 +14,6 @@ namespace Alcon\Design;
  *
  * @farwish
  */
-interface DecoratorBase
+interface Decorator
 {
 }

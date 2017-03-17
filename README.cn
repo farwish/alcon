@@ -26,7 +26,7 @@ Alcon 是一个PHP项目开发库 (尤其适合Phalcon框架)。
     `只要继承自 \Alcon\Services\ServiceBase;`   
 
 提供设计模式：  
-    `$ev = new \Alcon\Design\EventBase();`  
+    `$ev = new \Alcon\Design\Event();`  
     `$ob = new MyObserver;`  
     `$ev->attach($ob);`  
     `$ev->notify();`  
@@ -37,9 +37,9 @@ Alcon 是一个PHP项目开发库 (尤其适合Phalcon框架)。
 【目录结构】  
 ```
 Design   
-    |_ DecoratorBase.php  
-    |_ EventBase.php  
-    |_ SingletonBase.php  
+    |_ Decorator.php  
+    |_ Event.php  
+    |_ Singleton.php  
 
 Scripts   
     |_ model_header.php   

@@ -15,9 +15,9 @@
 
 ```
 Design  
-    |_ DecoratorBase.php  
-    |_ EventBase.php  
-    |_ SingletonBase.php  
+    |_ Decorator.php  
+    |_ Event.php  
+    |_ Singleton.php  
 
 Scripts   
     |_ model_header.php   

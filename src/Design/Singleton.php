@@ -8,7 +8,7 @@ namespace Alcon\Design;
  *
  * <code>
  *  class Demo {
- *      use SingletonBase;
+ *      use Singleton;
  *
  *      public function dosome() {}
  *  }
@@ -18,7 +18,7 @@ namespace Alcon\Design;
  *
  * @farwish
  */
-trait SingletonBase
+trait Singleton
 {
     /** 
      * Current object.

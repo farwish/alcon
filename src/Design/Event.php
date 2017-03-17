@@ -12,7 +12,7 @@ namespace Alcon\Design;
  *      }
  *  }
  *
- *  $ev = new EventBase;
+ *  $ev = new Event;
  *  $ob = new MyObserver; $ob2 = new MyObserver2;
  *  $ev->attach($ob); $ev->attach($ob2);
  *  $ev->detach($ob2);
@@ -21,7 +21,7 @@ namespace Alcon\Design;
  *
  * @farwish
  */
-class EventBase implements \SplSubject
+class Event implements \SplSubject
 {
     /**
      * Observer collection.
