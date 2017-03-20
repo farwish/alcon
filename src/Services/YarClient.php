@@ -9,7 +9,7 @@ namespace Alcon\Services;
  *
  * @farwish
  */
-class ServiceYarClient
+class YarClient
 {
     /**
      * Service url.

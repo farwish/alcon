@@ -1,1 +1,1 @@
-## 服务层部分(Yar), 继承之后使用.  
+## Service Part: extends it to use.  
