@@ -4,12 +4,15 @@ namespace Alcon\Services;
 
 /**
  * Service Swoole Client.
+ * Used with TCP/UDP Server or WebSocket Server.
  *
  * Doc: https://wiki.swoole.com/wiki/page/p-client.html
  *
  * <code>
  *  // change class by yourself.
  *  $cli = new SwooleClient($ip, $port);
+ *
+ *  // shutdown: `kill -15 pid`
  * </code>
  *
  * @farwish
@@ -39,10 +42,16 @@ class SwooleClient
 
     public function onConnect(\swoole_client $cli)
     {
+        echo "Client: Client connected.\n";
+
+        // Send data to server.
+        $cli->send("Hello");
     }
 
     public function onReceive(\swoole_client $cli, $data)
     {
+        // Receive server's data.
+        echo "Client receive '{$data}'\n";
     }
 
     public function onError(\swoole_client $cli)
