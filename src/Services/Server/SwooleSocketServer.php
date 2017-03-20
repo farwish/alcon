@@ -1,6 +1,6 @@
 <?php
 
-namespace Alcon\Services;
+namespace Alcon\Services\Server;
 
 /**
  * Service Swoole pure Websocket Server.
