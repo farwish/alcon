@@ -1,6 +1,6 @@
 <?php
 
-namespace Alcon\Service;
+namespace Alcon\Services\Server;
 
 /**
  * Swoole TCP/UDP Server.
