@@ -2,6 +2,8 @@
 
 namespace Alcon\Traits;
 
+use Alcon\Traits\JsonRespondTrait;
+
 /**
  * Trait for Controller.
  *
@@ -11,6 +13,16 @@ namespace Alcon\Traits;
  */
 trait ControllerTrait
 {
+    /** 
+     * Response json.
+     *
+     * <code>
+     *  $this->respond();
+     * </code>
+     *
+     * @farwish
+     */
+    use JsonRespondTrait;
 
     protected static $p;
 
@@ -39,23 +51,5 @@ trait ControllerTrait
             static::$p = max(1, $this->request->get('p', 'int'));
             static::$offset = (static::$p - 1) * static::$limit;
         }
-    }
-
-    /** 
-     * Response json.
-     *
-     * <code>
-     *  $this->respond();
-     * </code>
-     *
-     * @farwish
-     */
-    public function respond($data = null, $status = 0, $msg = 'Ok')
-    {   
-        $this->response->setJsonContent([
-            'data' => $data,
-            'status' => $status,
-            'msg' => $msg,
-        ])->send();
     }
 }
