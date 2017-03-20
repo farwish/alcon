@@ -16,4 +16,5 @@ namespace Alcon\Design;
  */
 interface Decorator
 {
+
 }
