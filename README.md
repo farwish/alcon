@@ -24,7 +24,7 @@ Scripts
     |_ model_header.php   
     |_ produce_all_models.php  
 
-Services(Yar)  
+Services  
     |_ ServiceBase.php  
 
 Supports  

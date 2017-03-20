@@ -2,6 +2,8 @@
 
 namespace Alcon\Design;
 
+use Alcon\Design\Exception;
+
 /**
  * Register tree for global use.
  *
@@ -46,7 +48,7 @@ class Container implements \Countable
      */
     private function preSet($name, $value) {
         if ( array_search($value, $this->_container) !== false ) {
-            throw new \ErrorException(__CLASS__ . "::" . __FUNCTION__ . 
+            throw new Exception(__CLASS__ . "::" . __FUNCTION__ . 
                 "('$name', value)" . self::ITEM_EXISTS);    
         }
     }
