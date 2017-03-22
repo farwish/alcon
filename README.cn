@@ -8,7 +8,24 @@ Alcon 是一个PHP项目开发库 (尤其适合Phalcon框架)。
 
 【演示】  
 <安装>  
-`composer require farwish/alcon:dev-master`  
+1. With Composer, your composer.json like:  
+```
+{  
+    "require": {   
+        "farwish/alcon": "dev-master"  
+    },  
+    "repositories": [   
+        {
+            "type": "vcs",  
+            "url": "https://github.com/farwish/alcon"  
+        }
+    ]   
+}  
+```
+
+2. Without Composer:  
+`git clone https://github.com/farwish/alcon.git`  
+`include "/your_path/farwish/alcon/autoload.php";`  
 
 <示例>  
 提供标识码：  
@@ -41,6 +58,7 @@ Design
     |_ Decorator.php  
     |_ Event.php  
     |_ Singleton.php  
+    |_ Strategy.php  
 
 Scripts   
     |_ model_header.php   

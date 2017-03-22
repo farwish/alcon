@@ -6,7 +6,24 @@
 `Alcon is a pure communal library for your program, if you are developing in phalcon framework.`    
 
 > Usage:  
-`composer require farwish/alcon:dev-master`  
+1. With Composer, your composer.json like:  
+```
+{  
+    "require": {  
+        "farwish/alcon": "dev-master"  
+    },  
+    "repositories": [  
+        {  
+            "type": "vcs",  
+            "url": "https://github.com/farwish/alcon"  
+        }  
+    ]  
+}  
+```
+
+2. Without Composer:  
+`git clone https://github.com/farwish/alcon.git`  
+`include "/your_path/farwish/alcon/autoload.php";`  
 
 > Suggest:  
 `You are encouraged to read it by yourself, its few and simple.`  
@@ -19,6 +36,7 @@ Design
     |_ Decorator.php  
     |_ Event.php  
     |_ Singleton.php  
+    |_ Strategy.php  
 
 Scripts   
     |_ model_header.php   
