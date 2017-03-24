@@ -31,26 +31,29 @@
 > Classes:  
 
 ```
-Design  
+Design/   
     |_ Container.php  
     |_ Decorator.php  
     |_ Event.php  
     |_ Singleton.php  
     |_ Strategy.php  
 
-Scripts   
+Projects/  
+    |_ Alconseek/  
+
+Scripts/   
     |_ model_header.php   
     |_ produce_all_models.php  
 
-Services  
+Services/  
     |_ ServiceBase.php  
 
-Supports  
+Supports/  
     |_ Codes.php  
     |_ Helper.php  
     |_ STBase.php  
 
-Traits  
+Traits/  
     |_ ControllerTrait.php   
     |_ ModelTrait.php  
     |_ ModelAdvanceTrait.php  
