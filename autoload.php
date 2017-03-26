@@ -11,14 +11,19 @@
  * @farwish.
  */
 
-const ALCON_PSR4 = '{"Alcon\\\": "src/"}';
-const ALCON_DS = DIRECTORY_SEPARATOR;
-const ALCON_EXT = '.php';
+class AlconAutoload
+{
+    const ALCON_NAMESPACE = 'Alcon\\';
+    const ALCON_BASEDIR = 'src/';
+    const ALCON_EXT = '.php';
+    
+    public static function psr4($name)
+    {
+        $name = str_replace([self::ALCON_NAMESPACE, '\\'], [self::ALCON_BASEDIR, DIRECTORY_SEPARATOR], $name);
+        $file = __DIR__ . DIRECTORY_SEPARATOR . $name . self::ALCON_EXT;
+        if (! file_exists($file) ) die("File not exists : {$file}\n");
+        include_once $file;
+    }
+}
 
-spl_autoload_register(function($name) {
-    $auto = json_decode(ALCON_PSR4, true);
-    $name = str_replace([key($auto), '\\'], [current($auto), ALCON_DS], $name);
-    $file = __DIR__ . ALCON_DS . $name . ALCON_EXT;
-    if (! file_exists($file) ) die("File not exists : {$file}\n");
-    include_once $file;
-});
+spl_autoload_register('AlconAutoload::psr4');

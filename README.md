@@ -21,6 +21,10 @@
 }  
 ```
 
+or  
+
+`composer require farwish/alcon`  
+
 2. Without Composer:  
 `git clone https://github.com/farwish/alcon.git`  
 `include "/your_path/farwish/alcon/autoload.php";`  

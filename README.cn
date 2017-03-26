@@ -23,6 +23,10 @@ Alcon 是一个PHP项目开发库 (尤其适合Phalcon框架)。
 }  
 ```
 
+or  
+
+`composer require farwish/alcon`  
+
 2. Without Composer:  
 `git clone https://github.com/farwish/alcon.git`  
 `include "/your_path/farwish/alcon/autoload.php";`  
