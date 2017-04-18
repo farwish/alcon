@@ -30,7 +30,7 @@
 
 or  
 
-`composer require farwish/alcon --no-dev`  
+`composer require farwish/alcon:dev-master`  
 
 2. Without Composer:  
 `git clone https://github.com/farwish/alcon.git`  
