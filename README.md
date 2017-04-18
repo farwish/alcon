@@ -1,6 +1,7 @@
 # Alcon
 
 <p>
+<img src="https://api.travis-ci.org/farwish/alcon.svg?branch=master">
 <img src="https://poser.pugx.org/farwish/alcon/v/stable">
 <img src="https://poser.pugx.org/farwish/alcon/downloads">
 <img src="https://poser.pugx.org/farwish/alcon/v/unstable">
