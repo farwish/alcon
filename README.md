@@ -1,5 +1,12 @@
 # Alcon
 
+<p>
+<img src="https://poser.pugx.org/farwish/alcon/v/stable">
+<img src="https://poser.pugx.org/farwish/alcon/downloads">
+<img src="https://poser.pugx.org/farwish/alcon/v/unstable">
+<img src="https://poser.pugx.org/farwish/alcon/license">
+</p>
+
 [中文文档](https://github.com/farwish/alcon/blob/master/README.cn "alcon中文文档")  
 
 > Synopsis:  
