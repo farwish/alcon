@@ -23,7 +23,7 @@
 
 or  
 
-`composer require farwish/alcon`  
+`composer require farwish/alcon --no-dev`  
 
 2. Without Composer:  
 `git clone https://github.com/farwish/alcon.git`  
@@ -63,6 +63,10 @@ Traits/
     |_ ModelAdvanceTrait.php  
 
 ```
+
+> Unit test  
+`composer update`  
+`phpunit`  
 
 > Maintain or Join  
 `Join Qq Group: 377154148`  

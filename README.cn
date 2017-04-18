@@ -25,7 +25,7 @@ Alcon 是一个PHP项目开发库 (尤其适合Phalcon框架)。
 
 or  
 
-`composer require farwish/alcon`  
+`composer require farwish/alcon --no-dev`  
 
 2. Without Composer:  
 `git clone https://github.com/farwish/alcon.git`  
@@ -87,6 +87,10 @@ Traits/
 
 【应用案例】  
 [alconSeek](https://github.com/farwish/alconSeek "alconSeek")  
+
+【单元测试】  
+`composer update`  
+`phpunit`  
 
 【维护与使用】   
 `Join Qq Gggroup: 377154148`  

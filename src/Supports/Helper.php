@@ -10,6 +10,39 @@ namespace Alcon\Supports;
 class Helper
 {
     /**
+     * 取得接口签名结果.
+     *
+     * @param $url 请求参数如 b=v1&a=v2
+     * @param $key client与service通用私钥
+     * @param $encode true签名/false校验
+     *
+     * @return string
+     *
+     * @farwish
+     */
+    public function getSign($url, $key, $encode = true)
+    {
+        parse_str($url, $arr);
+
+        if (! $encode) {
+            unset($arr['sign']);
+        }
+
+        // 首字母排序
+        ksort($arr, SORT_REGULAR);
+
+        $str = http_build_query($arr);
+
+        // 带上私钥
+        $new_str = $str . '&' . $key;
+
+        // 签名
+        $sign = openssl_encrypt($new_str, 'AES-128-CBC', $key, OPENSSL_RAW_DATA, substr($key, 0, 16));
+
+        return md5($sign);
+    }
+
+    /**
      * 先后调用 array_column 与 array_combine .
      *
      * @farwish
