@@ -5,7 +5,7 @@ namespace Alcon\Traits;
 /**
  * Trait for Model.
  *
- * 在模型中使用.
+ * For Phalcon framework.
  *
  * @farwish
  */
