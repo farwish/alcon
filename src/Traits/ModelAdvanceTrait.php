@@ -5,6 +5,8 @@ namespace Alcon\Traits;
 /**
  * Trait for Model advanced setting.
  *
+ * For Phalcon framework.
+ *
  * @farwish
  */
 trait ModelAdvanceTrait

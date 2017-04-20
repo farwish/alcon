@@ -70,6 +70,7 @@ Traits/
     |_ JsonRespondTrait.php  
     |_ ModelTrait.php  
     |_ ModelAdvanceTrait.php  
+    |_ SentryClientTrait.php  
 
 ```
 

@@ -7,7 +7,7 @@ use Alcon\Traits\JsonRespondTrait;
 /**
  * Trait for Controller.
  *
- * 供控制器使用Trait.
+ * For Phalcon framework.
  *
  * @farwish
  */
