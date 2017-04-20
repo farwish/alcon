@@ -1,9 +1,9 @@
 {
     "name": "farwish/alcon",
-    "description": "communal library for developing app in phalcon framework",
-    "keywords": ["alcon", "phalcon", "support"],
+    "description": "communal library for developing app in phalcon framework or others",
+    "keywords": ["alcon", "phalcon", "library", "support"],
     "type": "library",
-    "license": "MIT",
+    "license": "Apache",
     "authors": [
         {
             "name": "farwish",
@@ -12,7 +12,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=7.0",
         "ext-phalcon": "~3.0.2"
     },
     "autoload": {

@@ -81,6 +81,7 @@ Supports/
 
 Traits/  
     |_ ControllerTrait.php   
+    |_ JsonRespondTrait.php  
     |_ ModelTrait.php  
     |_ ModelAdvanceTrait.php  
 ```
@@ -89,8 +90,9 @@ Traits/
 [alconSeek](https://github.com/farwish/alconSeek "alconSeek")  
 
 【单元测试】  
+Run:  
 `composer update`  
-`phpunit`  
+`phpunit --coverage-text`  
 
 【维护与使用】   
 `Join Qq Gggroup: 377154148`  
