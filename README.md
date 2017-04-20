@@ -67,14 +67,16 @@ Supports/
 
 Traits/  
     |_ ControllerTrait.php   
+    |_ JsonRespondTrait.php  
     |_ ModelTrait.php  
     |_ ModelAdvanceTrait.php  
 
 ```
 
 > Unit test  
+Run:  
 `composer update`  
-`phpunit`  
+`phpunit --coverage-text`  
 
 > Maintain or Join  
 `Join Qq Group: 377154148`  
