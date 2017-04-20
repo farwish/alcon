@@ -3,6 +3,7 @@
 Common Used:  
 
 ```  
+    |_ SentryClientClass.php  
     |_ SentryClientTrait.php  
 ```  
 
