@@ -70,8 +70,8 @@ Traits/
     |_ JsonRespondTrait.php  
     |_ ModelTrait.php  
     |_ ModelAdvanceTrait.php  
+    |_ SentryClientClass.php  
     |_ SentryClientTrait.php  
-
 ```
 
 > Unit test  
