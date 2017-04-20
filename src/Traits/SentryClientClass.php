@@ -3,27 +3,17 @@
 namespace Alcon\Traits;
 
 /**
- * Sentry client trait.
+ * Sentry client class.
  * Need sentry-php sdk (sentry/sentry).
  *
- * NOTICE: modify the $_sentryDsn for your own.
- *
  * <code>
- *  class Demo
- *  {
- *      use Alcon\Traits\SentryClientTrait;
- *
- *      public function __construct($sentryDsn = '', $options = [])
- *      {
- *          static::sentryRun($sentryDsn, $options);
- *      }
- *  }
- *  new Demo($dsn, $options);
+ *  $sentryDsn = 'xxxx';
+ *  \Alcon\Traits\SentryClientClass::sentryRun($sentryDsn);
  * </code>
  *
  * @farwish
  */
-trait SentryClientTrait
+class SentryClientClass
 {
     /**
      * Run.
@@ -35,7 +25,7 @@ trait SentryClientTrait
      *
      * @farwish
      */
-    private static function sentryRun($sentryDsn, $options = [])
+    public static function sentryRun($sentryDsn, $options = [])
     {
         $error_handler = new \Raven_ErrorHandler(
             new \Raven_Client($sentryDsn, $options)
