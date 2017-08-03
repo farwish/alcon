@@ -8,7 +8,7 @@
 <img src="https://poser.pugx.org/farwish/alcon/license">
 </p>
 
-[中文文档](https://github.com/farwish/alcon/blob/master/README.cn "alcon中文文档")  
+[中文文档](https://github.com/farwish/alcon/blob/master/README.cn.md "alcon中文文档")  
 
 ## Synopsis  
 
