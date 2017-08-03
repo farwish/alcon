@@ -1,14 +1,21 @@
 # Alcon
 
-【简介】  
+## 簡介
+
 Alcon 是一个PHP项目开发库 (尤其适合Phalcon框架)。  
 
-【用途】  
 一个应用开发中可以使用的公用结构，目的是拆分出来便于随时组装。  
 
-【演示】  
-<安装>  
-1. With Composer, your composer.json like:  
+## 使用
+
+1. 使用 Composer 的情況  
+
+```
+composer require farwish/alcon  
+```
+
+或者編輯你的 composer.json 如:  
+
 ```
 {  
     "require": {   
@@ -23,15 +30,16 @@ Alcon 是一个PHP项目开发库 (尤其适合Phalcon框架)。
 }  
 ```
 
-or  
+2. 不使用 Composer 的情況:  
 
-`composer require farwish/alcon:dev-master`  
+```
+$ git clone https://github.com/farwish/alcon.git    
 
-2. Without Composer:  
-`git clone https://github.com/farwish/alcon.git`  
-`include "/your_path/farwish/alcon/autoload.php";`  
+include "/your_path/farwish/alcon/autoload.php";  
+```
 
-<示例>  
+## 示例  
+
 提供标识码：  
     `$status = \Alcon\Supports\Codes::ACTION_SUC;`  
     `$msg = \Alcon\Supports\Codes::get($status);`  
@@ -55,7 +63,8 @@ or
 提供任务脚本：  
     `php vendor/farwish/alcon/src/Scripts/produce_all_models.php`   
 
-【目录结构】  
+## 结构   
+
 ```
 Design/   
     |_ Container.php  
@@ -88,19 +97,32 @@ Traits/
     |_ SentryClientTrait.php  
 ```
 
-【应用案例】  
+## 应用   
+
 [alconSeek](https://github.com/farwish/alconSeek "alconSeek")  
 
-【单元测试】  
-Run:  
-`composer update`  
-`phpunit --coverage-text`  
 
-【维护与使用】   
-`Join Qq Gggroup: 377154148`  
-`If you do use this package, please let me know; welcome to give pull request.`  
+## 单元测试    
 
-【A&Q】
-`How to install phalcon?`  
-`1. https://docs.phalconphp.com/en/latest/reference/install.html`  
-`2. https://github.com/farwish/delicateShell/tree/master/lnmp`  
+```
+$ composer update  
+$ phpunit --coverage-text  
+```
+
+## 维护  
+
+```
+Join Qq Gggroup: 377154148  
+
+If you do use this package, please let me know; welcome to give pull request.  
+```
+
+## A&Q  
+
+```
+How to install phalcon?   
+
+1. https://docs.phalconphp.com/en/latest/reference/install.html  
+
+2. https://github.com/farwish/delicateShell/tree/master/lnmp  
+```
