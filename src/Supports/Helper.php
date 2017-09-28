@@ -5,7 +5,7 @@ namespace Alcon\Supports;
 /**
  * 静态调用系列函数.
  *
- * @farwish
+ * @author farwish <farwish@foxmail.com>
  */
 class Helper
 {
@@ -158,19 +158,36 @@ class Helper
     /**
      * 使用的server_name.
      *
+     * @deprecated 目前作为 full_server_name() 的别名
+     *
      * @farwish
      */
     public static function real_server()
     {
-        $protocal = ($_SERVER['SERVER_PORT'] == '443') ? 'https://' : 'http://';
+        return static::full_server_name();
+    }
+
+    /**
+     * 含协议和端口的完整server_name.
+     *
+     * protocol 是通过判断 SERVER_PORT 确定，或者直接用REQUEST_SCHEME (http,https).
+     *
+     * @farwish
+     */
+    public static function full_server_name()
+    {
+        //$protocol = ($_SERVER['SERVER_PORT'] == '443') ? 'https://' : 'http://';
+        $protocol = $_SERVER['REQUEST_SCHEME'] . '://';
 
         if ( isset($_SERVER['HTTP_X_FORWARDED_SERVER']) ) {
             $host = $_SERVER['HTTP_X_FORWARDED_SERVER'];
         } else {
-            $host = $_SERVER['SERVER_NAME'] ?: '';
+            $host = $_SERVER['SERVER_NAME'] ?? '';
         }
 
-        return $protocal . $host;
+        $port = ($_SERVER['SERVER_PORT'] == 80) ? '' : ":{$_SERVER['SERVER_PORT']}";
+
+        return $protocol . $host . $port;
     }
 
     /**
@@ -180,17 +197,11 @@ class Helper
      */
     public static function full_url()
     {
-        $protocal = ($_SERVER['SERVER_PORT'] == '443') ? 'https://' : 'http://';
+        $full_server_name = static::full_server_name();
 
-        if ( isset($_SERVER['HTTP_X_FORWARDED_SERVER']) ) {
-            $host = $_SERVER['HTTP_X_FORWARDED_SERVER'];
-        } else {
-            $host = $_SERVER['SERVER_NAME'] ?: '';
-        }
+        $uri = $_SERVER['REQUEST_URI'] ?? '';
 
-        $uri = $_SERVER['REQUEST_URI'] ?: '';
-
-        return $protocal . $host . $uri;
+        return $full_server_name . $uri;
     }
 
     /**
@@ -202,17 +213,18 @@ class Helper
      */
     public static function referer()
     {
-        $protocal = ($_SERVER['SERVER_PORT'] == '443') ? 'https://' : 'http://';
+        //$protocol = ($_SERVER['SERVER_PORT'] == '443') ? 'https://' : 'http://';
+        $protocol = $_SERVER['REQUEST_SCHEME'] . '://';
         
         if ( isset($_SERVER['HTTP_REFERER']) ) {
             // 来路
             $direct = $_SERVER['HTTP_REFERER'];
         } else if ( isset($_SERVER['HTTP_X_FORWARDED_SERVER']) ) {
             // 代理地址
-            $direct = $protocal . $_SERVER['HTTP_X_FORWARDED_SERVER'];
+            $direct = $protocol . $_SERVER['HTTP_X_FORWARDED_SERVER'];
         } else {
             // 默认
-            $direct = $protocal . $_SERVER['SERVER_NAME'];
+            $direct = $protocol . $_SERVER['SERVER_NAME'];
         }
 
         return $direct;
@@ -361,6 +373,37 @@ class Helper
         $json = curl_exec($ch);
 
         return $json; 
+    }
+
+    /**
+     * Send request and fetch page.
+     *
+     * @license Apache
+     * @author farwish <farwish@foxmail.com>
+     *
+     * @param string $url
+     * @param array  $options 
+        [
+            'http' => [
+                'method' => 'POST',
+                'header' => 'Content-type: application/x-www-form-urlencoded',
+                'content'=> http_build_query([
+                    'username' => 'user',
+                    'password' => 'user',
+                ]),
+                'max_redirects' => 0, # Ignore redirects.
+                'ignore_errors' => 1, # Fetch the content even on failure status codes.
+            ],
+        ];
+     * @see http://php.net/manual/en/context.http.php
+     */
+    public static function send_request($url, $options)
+    {
+        $context = stream_context_create($options);
+
+        $result = file_get_contents($url, false, $context);
+
+        return $result;
     }
 
     /**
