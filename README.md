@@ -19,7 +19,7 @@ Alcon is a pure communal library for your program, if you are developing in phal
 1. With Composer  
 
 ```
-$ composer require farwish/alcon   
+$ composer require farwish/alcon:^4.1.0 -v   
 ```
 
 or custom your composer.json like:  
@@ -27,7 +27,7 @@ or custom your composer.json like:
 ```
 {  
     "require": {  
-        "farwish/alcon": "dev-master"  
+        "farwish/alcon": "^4.1.0"  
     },  
     "repositories": [  
         {  
