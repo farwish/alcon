@@ -8,7 +8,8 @@
  * include "/your_path/farwish/alcon/autoload.php";
  * </code>
  *
- * @farwish.
+ * @license Apache-2.0
+ * @author farwish <farwish@foxmail.com>
  */
 
 class AlconAutoload

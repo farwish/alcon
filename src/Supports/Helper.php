@@ -20,7 +20,7 @@ class Helper
      *
      * @farwish
      */
-    public function getSign($url, $key, $encode = true)
+    public static function getSign($url, $key, $encode = true)
     {
         parse_str($url, $arr);
 
@@ -47,7 +47,7 @@ class Helper
      *
      * @farwish
      */
-    public static function array_column_combine($array, $column)
+    public static function arrayColumnCombine($array, $column)
     {
         $res = array_column($array, $column); 
 
@@ -59,7 +59,7 @@ class Helper
      *
      * @farwish
      */
-    public static function format_date($time = '', $format = 'Y-m-d H:i:s')
+    public static function formatDate($time = '', $format = 'Y-m-d H:i:s')
     {
         $time = $time ?: time();
 
@@ -75,7 +75,7 @@ class Helper
      *
      * @farwish
      */
-    public static function join_condition($data, $column, $in = true)
+    public static function joinCondition($data, $column, $in = true)
     {
         $join = is_array($data) ? (join(',', $data) ?: -1) : ($data ?: -1);
         $kw = $in ? "IN" : "NOT IN";
@@ -87,7 +87,7 @@ class Helper
      *
      * @farwish
      */
-    public static function custom_mt_uniqid($prefix = 'YK')
+    public static function customMtUniqid($prefix = 'YK')
     {
         $value = mt_rand();
 
@@ -124,7 +124,7 @@ class Helper
      *
      * @farwish
      */
-    public static function build_insert_sql($table, $column, array $data)
+    public static function buildInsertSql($table, $column, array $data)
     {
         $sql = "INSERT INTO {$table} ({$column}) VALUES ";
 
@@ -145,7 +145,7 @@ class Helper
      *
      * @farwish
      */
-    public static function build_and_condition(array $array)
+    public static function buildAndCondition(array $array)
     {   
         $str = ''; 
         foreach ($array as $key => $val) {
@@ -162,9 +162,9 @@ class Helper
      *
      * @farwish
      */
-    public static function real_server()
+    public static function realServer()
     {
-        return static::full_server_name();
+        return static::fullServerName();
     }
 
     /**
@@ -174,7 +174,7 @@ class Helper
      *
      * @farwish
      */
-    public static function full_server_name()
+    public static function fullServerName()
     {
         //$protocol = ($_SERVER['SERVER_PORT'] == '443') ? 'https://' : 'http://';
         $protocol = $_SERVER['REQUEST_SCHEME'] . '://';
@@ -195,9 +195,9 @@ class Helper
      *
      * @farwish
      */
-    public static function full_url()
+    public static function fullUrl()
     {
-        $full_server_name = static::full_server_name();
+        $full_server_name = static::fullServerName();
 
         $uri = $_SERVER['REQUEST_URI'] ?? '';
 
@@ -276,7 +276,7 @@ class Helper
      *
      * @farwish
      */
-    public static function gen_orderid($prefix = 'YK')
+    public static function genOrderid($prefix = 'YK')
     {
         $uniq = uniqid(TRUE);
 
@@ -329,7 +329,7 @@ class Helper
      *
      * @farwish
      */
-    public static function ismobile($string)
+    public static function isMobile($string)
     {
         if ( preg_match('/^1\d{10}$/', $string, $matches) ) {
             return true;
@@ -397,7 +397,7 @@ class Helper
         ];
      * @see http://php.net/manual/en/context.http.php
      */
-    public static function send_request($url, $options)
+    public static function sendRequest($url, $options)
     {
         $context = stream_context_create($options);
 
@@ -411,7 +411,7 @@ class Helper
      *
      * @easychen
      */
-    public static function is_mobile_request()
+    public static function isMobileRequest()
     {
         $_SERVER['ALL_HTTP'] = isset($_SERVER['ALL_HTTP']) ? $_SERVER['ALL_HTTP'] : '';
      
