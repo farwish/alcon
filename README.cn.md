@@ -11,7 +11,7 @@ Alcon 是一个PHP项目开发库 (尤其适合Phalcon框架)。
 1. 使用 Composer 的情況  
 
 ```
-composer require farwish/alcon  
+composer require farwish/alcon:^4.1.0 -v  
 ```
 
 或者編輯你的 composer.json 如:  
@@ -19,7 +19,7 @@ composer require farwish/alcon
 ```
 {  
     "require": {   
-        "farwish/alcon": "dev-master"  
+        "farwish/alcon": "^4.1.0"  
     },  
     "repositories": [   
         {
