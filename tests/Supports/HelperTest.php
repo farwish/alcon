@@ -33,6 +33,6 @@ class HelperTest extends TestCase
             ],
         ];
 
-        $this->assertContains('百度', Helper::send_request($url, $options));
+        $this->assertContains('百度', Helper::sendRequest($url, $options));
     }
 }
