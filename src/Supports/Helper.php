@@ -461,4 +461,88 @@ class Helper
         else
             return false;
     }
+
+    /**
+     * 多任务处理
+     *
+     * @author farwish
+     *
+     * @param int $worker_num     worker数
+     * @param array $groups       分组数据
+     * @param callable $callback($current_group, $worker_no)  回调函数
+     *
+     * @return int
+     * @throws \Exception
+     */
+    public static function multiProcess(int $worker_num, array $groups, callable $callback)
+    {
+        if (!extension_loaded('pcntl')) {
+            throw new \Exception('Pcntl extension missed!');
+        }
+        if (!$worker_num) {
+            throw new \Exception("Worker_num can't be zero!");
+        }
+
+        $pids = [];
+        for ($i = 0; $i < $worker_num; $i++) {
+            $pid = pcntl_fork();
+            switch ($pid) {
+                case -1:
+                    throw new \Exception('Fork fail!');
+                    break;
+                case 0:
+                    // child
+                    call_user_func_array($callback, [ $groups[$i], $i+1 ]);
+                    die;
+                    break;
+                default:
+                    // parent: $pid > 0
+                    $pids[$pid] = $pid;
+                    break;
+            }
+        }
+
+        $terminated_num = 0;
+        // `man 2 wait` for more comment.
+        foreach ($pids as $pid) {
+            if ($pid) {
+                $status = 0;
+                // Wait for process to change state ( 3 situation ).
+                // Perform a wait allows the system to release the resources associated with the child.
+                $pid_terminated = pcntl_waitpid($pid, $status);
+                if ($pid_terminated) {
+                    $terminated_num++;
+                }
+            }
+        }
+
+        return $terminated_num;
+    }
+
+    /**
+     * 通用检测转换字符编码
+     *
+     * @author farwish
+     *
+     * @param string $string
+     * @param bool   $utf8_first 编码检测的顺序是将最大可能性放在前面
+     *
+     * @return string
+     */
+    public static function commonConvertEncode($string, $to_encoding = 'utf-8', $utf8_first = true)
+    {
+        $encoding_list = [
+            "ASCII", 'UTF-8', "GB2312", "GBK", 'BIG5',
+        ];
+
+        if (! $utf8_first) {
+            $encoding_list = [
+                "ASCII", "GB2312", "GBK", 'UTF-8', 'BIG5',
+            ];
+        }
+
+        $from_encoding = mb_detect_encoding($string, $encoding_list);
+
+        return mb_convert_encoding(trim($string), $to_encoding, $from_encoding);
+    }
 }

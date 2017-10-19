@@ -35,4 +35,33 @@ class HelperTest extends TestCase
 
         $this->assertContains('百度', Helper::sendRequest($url, $options));
     }
+
+    public function testMultiProcess()
+    {
+        // 初始数据
+        $data = [1, 2, 3, 4, 5, 6, 7];
+
+        // 每组数据量
+        $chunk_size = 5;
+
+        $groups = array_chunk($data, $chunk_size);
+
+        $worker_num = count($groups);
+
+        $terminated = Helper::multiProcess($worker_num, $groups, function($current_group, $worker_no) {
+            // job...
+            echo PHP_EOL . "Worker {$worker_no} ran" . PHP_EOL;
+        });
+
+        $this->assertEquals($terminated, $worker_num);
+    }
+
+    public function testCommonConvertEncode()
+    {
+        $string = '3系';
+
+        $encoded = Helper::commonConvertEncode($string);
+
+        $this->assertEquals($string, $encoded);
+    }
 }
