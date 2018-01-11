@@ -6,14 +6,18 @@ namespace Alcon\Supports;
  * 通用状态码.
  *
  * <code>
- *  $st = Codes::ACTION_SUC;
- *  $ms = Codes::get($st);
+ *  $status = Codes::ACTION_SUC;
+ *  $msg_get = Codes::get($status);      // output: 操作成功
+ *  $msg_map = Codes::map('ACTION_SUC'); // output: 操作成功
  * </code>
  *
- * @farwish
+ * @license Apache-2.0
+ * @author farwish farwish@foxmail.com
  */
-class Codes extends STBase
+class Codes
 {
+    use \Alcon\Supports\StatusTrait;
+
     const ACTION_SUC = 0;
     const ACTION_FAL = -1;
     const ACTION_ILL = -2;
@@ -24,7 +28,8 @@ class Codes extends STBase
     const DELETE_ERR = 1003;
     const PARAM_ERR  = 1004;
 
-    protected static $val = [
+    // key value map, easy extend.
+    const _LIST = [
         self::ACTION_SUC => '操作成功',
         self::ACTION_FAL => '操作失败',
         self::ACTION_ILL => '非法操作',

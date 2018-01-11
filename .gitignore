@@ -1,3 +1,6 @@
 /vendor/
 /coverage/
 composer.lock
+.env
+*.pem
+*.pub

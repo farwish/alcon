@@ -1,8 +1,16 @@
 # Alcon
 
+<p>
+<img src="https://api.travis-ci.org/farwish/alcon.svg?branch=master">
+<img src="https://poser.pugx.org/farwish/alcon/v/stable">
+<img src="https://poser.pugx.org/farwish/alcon/downloads">
+<img src="https://poser.pugx.org/farwish/alcon/v/unstable">
+<img src="https://poser.pugx.org/farwish/alcon/license">
+</p>
+
 ## 簡介
 
-Alcon 是一个PHP项目开发库 (尤其适合Phalcon框架)。  
+Alcon 是一个PHP项目开发支持库。  
 
 一个应用开发中可以使用的公用结构，目的是拆分出来便于随时组装。  
 
@@ -11,7 +19,7 @@ Alcon 是一个PHP项目开发库 (尤其适合Phalcon框架)。
 1. 使用 Composer 的情況  
 
 ```
-composer require farwish/alcon:^4.1.0 -v  
+composer require farwish/alcon -v  
 ```
 
 或者編輯你的 composer.json 如:  
@@ -19,7 +27,7 @@ composer require farwish/alcon:^4.1.0 -v
 ```
 {  
     "require": {   
-        "farwish/alcon": "^4.1.0"  
+        "farwish/alcon": "4.1.0"  
     },  
     "repositories": [   
         {
@@ -38,30 +46,64 @@ $ git clone https://github.com/farwish/alcon.git
 include "/your_path/farwish/alcon/autoload.php";  
 ```
 
-## 示例  
+## 建议
 
-提供标识码：  
-    `$status = \Alcon\Supports\Codes::ACTION_SUC;`  
-    `$msg = \Alcon\Supports\Codes::get($status);`  
+直接查看目录结构及源码, 按需使用.  
 
-提供函数：  
-    `\Alcon\Supports\Helper::format_date('1234567')`  
+```php
+Status Code:
+$status = \Alcon\Supports\Codes::ACTION_SUC;         // 0
+$messag = \Alcon\Supports\Codes::get($status);       // 操作成功
+$messag = \Alcon\Supports\Codes::map('ACTION_SUC');  // 操作成功
+```
 
-提供Trait：  
-    `use \Alcon\Traits\ControllerTrait;`  
-    `use \Alcon\Traits\ModelTrait;`  
+```php
+Helper Class:
+\Alcon\Supports\Helper::isInWechat();
+\Alcon\Supports\Helper::arrayColumnCombine($array, $column);
+\Alcon\Supports\Helper::buildInsertSql($table, $column, array $data);
+...
+```
 
-提供服务层:  
-    `只要继承自 \Alcon\Services\ServiceBase;`   
+```php
+Design Pattern:
+\Alcon\Design\Event
+\Alcon\Design\Container
+\Alcon\Design\Singleton
+...
+```
 
-提供设计模式：  
-    `$ev = new \Alcon\Design\Event();`  
-    `$ob = new MyObserver;`  
-    `$ev->attach($ob);`  
-    `$ev->notify();`  
+```php
+Thirdparty Wechat sdk:
+\Alcon\Thirdparty\Wx::get_sns_token($token);
+\Alcon\Thirdparty\Wx::get_userinfo($access_token, $openid);
+...
+```
 
-提供任务脚本：  
-    `php vendor/farwish/alcon/src/Scripts/produce_all_models.php`   
+```php
+Thirdparty Alipay sdk:
+------ Create order
+$trade = new \Alcon\Thirdparty\Alipay\AlipayTrade();
+$trade->setPid('xx');
+$trade->setAppid('xx');
+$trade->setAlipayPublicKeyPath('xx');
+$trade->setAlipayAppPrivateKeyPath('xx');
+$trade->setNotifyUrl('http://xx');
+$trade->precreateSet('xx', 'xx', 'xx', 'xx');
+$trade->precreate();
+
+------ Refund order
+$trade = new \Alcon\Thirdparty\Alipay\AlipayTrade();
+$trade->setPid('xx');
+$trade->setAppid('xx');
+$trade->setAlipayPublicKeyPath('xx');
+$trade->setAlipayAppPrivateKeyPath('xx');
+$trade->refundSet('xx', 'xx');
+$trade->refund();
+
+------ Signature can use standalone
+self::signature($decoded_query_string);
+```
 
 ## 结构   
 
@@ -86,7 +128,15 @@ Services/
 Supports/  
     |_ Codes.php  
     |_ Helper.php  
-    |_ STBase.php  
+    |_ StatusTrait.php  
+
+Thirdparty/
+    |_ Alipay/
+        |_ AlipayHelperTrait.php
+        |_ AlipayTrade.php
+    |_ Wechat/
+        |_ Wx.php
+        |_ WxAbstract.php
 
 Traits/  
     |_ ControllerTrait.php   
@@ -106,23 +156,13 @@ Traits/
 
 ```
 $ composer update  
-$ phpunit --coverage-text  
+$ phpunit    
 ```
 
 ## 维护  
 
 ```
-Join Qq Gggroup: 377154148  
+Join Qq Ggroup: 377154148  
 
 If you do use this package, please let me know; welcome to give pull request.  
-```
-
-## A&Q  
-
-```
-How to install phalcon?   
-
-1. https://docs.phalconphp.com/en/latest/reference/install.html  
-
-2. https://github.com/farwish/delicateShell/tree/master/lnmp  
 ```

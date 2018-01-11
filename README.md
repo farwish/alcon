@@ -12,14 +12,14 @@
 
 ## Synopsis  
 
-Alcon is a pure communal library for your program, if you are developing in phalcon framework.    
+Alcon is a light communal lib for your program.    
 
 ## Usage   
 
 1. With Composer  
 
 ```
-$ composer require farwish/alcon:^4.1.0 -v   
+$ composer require farwish/alcon -v   
 ```
 
 or custom your composer.json like:  
@@ -27,7 +27,7 @@ or custom your composer.json like:
 ```
 {  
     "require": {  
-        "farwish/alcon": "^4.1.0"  
+        "farwish/alcon": "4.1.0"  
     },  
     "repositories": [  
         {  
@@ -49,6 +49,61 @@ include "/your_path/farwish/alcon/autoload.php";
 ## Suggest:  
 
 You are encouraged to read it by yourself, its few and simple.    
+
+```php
+Status Code:
+$status = \Alcon\Supports\Codes::ACTION_SUC;         // 0
+$messag = \Alcon\Supports\Codes::get($status);       // 操作成功
+$messag = \Alcon\Supports\Codes::map('ACTION_SUC');  // 操作成功
+```
+
+```php
+Helper Class:
+\Alcon\Supports\Helper::isInWechat();
+\Alcon\Supports\Helper::arrayColumnCombine($array, $column);
+\Alcon\Supports\Helper::buildInsertSql($table, $column, array $data);
+...
+```
+
+```php
+Design Pattern:
+\Alcon\Design\Event
+\Alcon\Design\Container
+\Alcon\Design\Singleton
+...
+```
+
+```php
+Thirdparty Wechat sdk:
+\Alcon\Thirdparty\Wx::get_sns_token($token);
+\Alcon\Thirdparty\Wx::get_userinfo($access_token, $openid);
+...
+```
+
+```php
+Thirdparty Alipay sdk:
+------ Create order
+$trade = new \Alcon\Thirdparty\Alipay\AlipayTrade();
+$trade->setPid('xx');
+$trade->setAppid('xx');
+$trade->setAlipayPublicKeyPath('xx');
+$trade->setAlipayAppPrivateKeyPath('xx');
+$trade->setNotifyUrl('http://xx');
+$trade->precreateSet('xx', 'xx', 'xx', 'xx');
+$trade->precreate();
+
+------ Refund order
+$trade = new \Alcon\Thirdparty\Alipay\AlipayTrade();
+$trade->setPid('xx');
+$trade->setAppid('xx');
+$trade->setAlipayPublicKeyPath('xx');
+$trade->setAlipayAppPrivateKeyPath('xx');
+$trade->refundSet('xx', 'xx');
+$trade->refund();
+
+------ Signature can use standalone
+self::signature($decoded_query_string);
+```
 
 
 ## Structure:  
@@ -74,7 +129,15 @@ Services/
 Supports/  
     |_ Codes.php  
     |_ Helper.php  
-    |_ STBase.php  
+    |_ StatusTrait.php   
+
+Thirdparty/
+    |_ Alipay/
+        |_ AlipayHelperTrait.php
+        |_ AlipayTrade.php
+    |_ Wechat/
+        |_ Wx.php
+        |_ WxAbstract.php
 
 Traits/  
     |_ ControllerTrait.php   
@@ -89,7 +152,7 @@ Traits/
 
 ```
 $ composer update   
-$ phpunit --coverage-text  
+$ phpunit  
 ```
 
 ## Maintain or Join  
@@ -98,14 +161,4 @@ $ phpunit --coverage-text
 Join Qq Group: 377154148  
 
 If you do use this package, please let me know; welcome to give pull request.  
-```
-
-## A&Q  
-
-```
-How to install phalcon?   
-
-1. https://docs.phalconphp.com/en/latest/reference/install.html   
-
-2. https://github.com/farwish/delicateShell/tree/master/lnmp  
 ```
