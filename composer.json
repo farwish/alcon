@@ -3,7 +3,7 @@
     "description": "communal library for developing app in phalcon framework or others",
     "keywords": ["alcon", "phalcon", "library", "support", "thirdparty"],
     "type": "library",
-    "license": "Apache",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "farwish",
