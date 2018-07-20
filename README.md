@@ -27,7 +27,7 @@ or custom your composer.json like:
 ```
 {  
     "require": {  
-        "farwish/alcon": "4.1.0"  
+        "farwish/alcon": "4.1.x-dev"  
     },  
     "repositories": [  
         {  
